@@ -1,0 +1,29 @@
+{
+    "name":"sounds",
+    "version":"1.0",
+    "description":"Plays fun sounds when you Open, Close, Load, Detach, Move & Zoom on a tab",
+    
+    "author":"Jyarvis8",
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+      },
+    "permissions": [
+        "activeTab"
+      ],
+    "icons": {
+          "16": "icon16.png",
+          "32": "icon32.png",
+          "128": "icon128.png"
+        },
+    "web_accessible_resources": [
+            "zoom.mp3","detached.mp3","created.mp3","moved.mp3","click.mp3","removed.mp3"
+        ],
+    "manifest_version":2,
+    "content_scripts": [
+        {
+            "matches":["https://www.google.com/*"],
+            "js":["content.js"]
+        }
+    ]
+}
